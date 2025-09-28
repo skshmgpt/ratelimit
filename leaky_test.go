@@ -8,10 +8,13 @@ import (
 
 func TestBurst(t *testing.T) {
 	wanted := "hello world"
+	req, _ := http.NewRequest("GET", "http://localhost:8080/api/unprotected", nil)
+	// req.Header.Set("X-Api-Key", "68d82305-d680-8325-83c7-971f03a1ce46")
+	client := &http.Client{}
 
 	// fire off 5 allowed requests
-	for i := 0; i < 5; i++ {
-		resp, err := http.Get("http://localhost:8080/api/protected")
+	for i := 0; i < 20; i++ {
+		resp, err := client.Do(req)
 		if err != nil {
 			t.Fatal(err)
 		}
@@ -19,7 +22,9 @@ func TestBurst(t *testing.T) {
 	}
 
 	// 6th request should be rate-limited
-	resp, err := http.Get("http://localhost:8080/api/protected")
+
+	resp, err := client.Do(req)
+
 	if err != nil {
 		t.Fatal(err)
 	}
