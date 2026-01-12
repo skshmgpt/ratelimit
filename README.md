@@ -2,15 +2,6 @@
 
 A simple token bucket rate limiter implementation, with per-user tracking and burst handling, backed by Redis for distributed state management.
 
-## Badges
-
-[![Go Reference](https://pkg.go.dev/badge/github.com/sakshamg567/leaky.svg)](https://pkg.go.dev/github.com/sakshamg567/leaky)
-
-[![Go Build](https://github.com/sakshamg567/ratelimit/actions/workflows/go.yml/badge.svg)](https://github.com/sakshamg567/ratelimit/actions/workflows/go.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-[![Coverage Status](https://coveralls.io/repos/github/sakshamg567/ratelimit/badge.svg?branch=main)](https://coveralls.io/github/sakshamg567/ratelimit?branch=main)
-
 ## Table of Contents
 
 - [Key Features](#key-features)
